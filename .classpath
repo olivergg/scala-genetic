@@ -1,0 +1,15 @@
+<classpath>
+  <classpathentry kind="src" path="src/main/scala" output="target/scala-2.11/classes"/>
+  <classpathentry kind="src" path="src/main/java" output="target/scala-2.11/classes"/>
+  <classpathentry kind="src" path="src/test/scala" output="target/scala-2.11/test-classes"/>
+  <classpathentry kind="src" path="src/test/java" output="target/scala-2.11/test-classes"/>
+  <classpathentry sourcepath="/home/olivier/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.1-sources.jar" kind="lib" path="/home/olivier/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.1.jar"/>
+  <classpathentry sourcepath="/home/olivier/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/srcs/akka-actor_2.11-2.3.3-sources.jar" kind="lib" path="/home/olivier/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.3.jar"/>
+  <classpathentry sourcepath="/home/olivier/.ivy2/cache/com.typesafe/config/srcs/config-1.2.1-sources.jar" kind="lib" path="/home/olivier/.ivy2/cache/com.typesafe/config/bundles/config-1.2.1.jar"/>
+  <classpathentry sourcepath="/home/olivier/.ivy2/cache/org.scalatest/scalatest_2.11/srcs/scalatest_2.11-2.1.6-sources.jar" kind="lib" path="/home/olivier/.ivy2/cache/org.scalatest/scalatest_2.11/jars/scalatest_2.11-2.1.6.jar"/>
+  <classpathentry sourcepath="/home/olivier/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.11.0-sources.jar" kind="lib" path="/home/olivier/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.0.jar"/>
+  <classpathentry sourcepath="/home/olivier/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/srcs/scala-parser-combinators_2.11-1.0.1-sources.jar" kind="lib" path="/home/olivier/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.1.jar"/>
+  <classpathentry sourcepath="/home/olivier/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/srcs/scala-xml_2.11-1.0.1-sources.jar" kind="lib" path="/home/olivier/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/bundles/scala-xml_2.11-1.0.1.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="output" path="bin"/>
+</classpath>
