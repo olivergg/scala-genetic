@@ -1,6 +1,5 @@
 package org.olivergg
 
-import akka.actor.ActorRef
 import akka.actor.ActorPath
 package object messages {
   sealed trait Message
@@ -17,5 +16,4 @@ package object messages {
   case object SetupRandomGeneration extends Message
   case class GenerationDone(nth: Int) extends Message
   case class AddIndividual(genes: Array[Int]) extends Message
-  
 }

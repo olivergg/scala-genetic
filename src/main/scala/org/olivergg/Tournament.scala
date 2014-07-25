@@ -1,23 +1,12 @@
 package org.olivergg
 
-import akka.actor.Actor
-import akka.actor.UntypedActor
-import akka.event.Logging
-import scala.util.Random
-import org.olivergg.messages._
-import akka.actor.ActorRef
-import scala.concurrent.ExecutionContext.Implicits.global
 import akka.pattern.ask
-import akka.util.Timeout
-import scala.concurrent.duration.Duration
-import scala.concurrent.duration._
-import scala.collection.mutable.Seq
-import scala.concurrent.Future
-import scala.concurrent.Await
+import org.olivergg.messages._
+
 import scala.collection.mutable.ListBuffer
-import akka.actor.ActorSelection
-import akka.actor.ActorSystem
-import akka.pattern.pipe
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
+import scala.util.Random
 
 class Tournament(tournamentSize: Int, populationSize: Int) extends MyActor {
 

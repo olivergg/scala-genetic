@@ -1,6 +1,6 @@
 package com.genetic
 
-object ProblemeSacADosDesc {
+object KnapsackProblem {
 
   case class Objet(weight: Int, price: Int) {
     override def toString: String = s"[w=$weight,p=$price]"

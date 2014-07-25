@@ -2,7 +2,7 @@ package com.genetic
 
 import scala.util.Random
 import scala.collection.mutable.ArrayBuffer
-
+@deprecated("do not use")
 object GAlgorithm extends App {
   val crossProbability = 0.6f
   val mutationProbability = 0.07f
@@ -11,7 +11,7 @@ object GAlgorithm extends App {
 
   def evolve(pop: Population): Population =
     {
-      pop.computeFitnesses(ProblemeSacADosDesc.getFitness)
+      pop.computeFitnesses(KnapsackProblem.getFitness)
 
       //      val parents = proportionalRouletteWheelSelection(pop)
 
@@ -146,7 +146,7 @@ object GAlgorithm extends App {
   //// Main code below
 //  for (i <- 1 to 5) {
 
-    var myPop = Population(50, ProblemeSacADosDesc.objets.length, true)
+    var myPop = Population(50, KnapsackProblem.objets.length, true)
     //val inds = Array(Individual(Array(0, 1, 1, 0, 0, 1)), Individual(Array(0, 1, 0, 1, 1, 0)), Individual(Array(1, 0, 1, 0, 0, 0)), Individual(Array(1, 0, 0, 0, 0, 1)), Individual(Array(0, 0, 0, 0, 1, 0)), Individual(Array(0, 1, 0, 0, 1, 0)), Individual(Array(1, 1, 0, 1, 0, 1)), Individual(Array(1, 0, 1, 0, 1, 1)), Individual(Array(1, 0, 0, 0, 0, 1)), Individual(Array(1, 1, 0, 1, 1, 1)))
     //var myPop = new Population(10, FitnessCalc.objets.size, false, inds)
 
@@ -171,7 +171,7 @@ object GAlgorithm extends App {
 
     println(myPop.inds.groupBy(x => x.toString).map(y => (y._1, y._2.length)))
     //println(myPop.inds.map(ind => FitnessCalc.getFitness(ind)).groupBy(x => x).map(f => (f._1, f._2.length)))
-    myPop.computeFitnesses(ProblemeSacADosDesc.getFitness)
+    myPop.computeFitnesses(KnapsackProblem.getFitness)
 
     sol = myPop.getFittest()
 
@@ -183,7 +183,7 @@ object GAlgorithm extends App {
     //    c
     //  }
 
-    import ProblemeSacADosDesc.Objet
+    import KnapsackProblem.Objet
     def getPrice(objets: Array[Objet], sol: Individual): Float = {
       val zipped = objets zip sol.genes
       val mapped = zipped.map { case (obj, gene) => obj.price * gene }
@@ -196,12 +196,12 @@ object GAlgorithm extends App {
       mapped.sum
     }
 
-    println(ProblemeSacADosDesc.objets.mkString(";"))
-    println(s"gene size = ${ProblemeSacADosDesc.objets.length}")
-    println(s"max price that can be obtain = ${ProblemeSacADosDesc.maxPrice}")
+    println(KnapsackProblem.objets.mkString(";"))
+    println(s"gene size = ${KnapsackProblem.objets.length}")
+    println(s"max price that can be obtain = ${KnapsackProblem.maxPrice}")
     println("mympop fittest = " + sol + "  sol fitness = " + myPop.f(sol))
-    println("sol price = " + getPrice(ProblemeSacADosDesc.objets, sol))
-    println("sol weight = " + getWeight(ProblemeSacADosDesc.objets, sol))
+    println("sol price = " + getPrice(KnapsackProblem.objets, sol))
+    println("sol weight = " + getWeight(KnapsackProblem.objets, sol))
 
 //  }
 }

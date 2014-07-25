@@ -1,6 +1,4 @@
 package org.olivergg
-import akka.actor.Actor
-import akka.event.Logging
 import org.olivergg.messages._
 
 class Individual(var genes: Array[Int], val fitnessFunc: Array[Int] => Float) extends MyActor {

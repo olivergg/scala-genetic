@@ -1,9 +1,8 @@
 package org.olivergg
 
-import akka.actor.Actor
 import org.olivergg.messages._
+
 import scala.util.Random
-import akka.event.Logging
 
 class Crossing extends MyActor {
   val crossProbability = 0.6f

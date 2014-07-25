@@ -1,19 +1,9 @@
 package org.olivergg
 
-import akka.actor.Actor
-import akka.actor.ActorRef
-import org.olivergg.messages._
+import akka.actor.{ActorRef, Props}
 import akka.pattern.ask
-import akka.util.Timeout
-import akka.actor.UntypedActor
-import akka.actor.Props
-import com.genetic.ProblemeSacADosDesc
-import akka.event.Logging
-import scala.concurrent.duration.Duration
-import scala.concurrent.duration._
-import scala.util.Random
-import scala.concurrent.Future
-import scala.concurrent.ExecutionContext.Implicits.global
+import org.olivergg.messages._
+
 import scala.collection.mutable.ListBuffer
 class Population extends MyActor {
 

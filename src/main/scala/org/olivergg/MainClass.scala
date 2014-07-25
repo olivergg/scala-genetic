@@ -1,13 +1,11 @@
 package org.olivergg
 
-import akka.actor.{ ActorRef, Props, ActorSystem }
-import scala.concurrent.duration.Duration
-import scala.concurrent.duration._
-import scala.concurrent.ExecutionContext.Implicits._
-import org.olivergg.messages._
-import com.genetic.ProblemeSacADosDesc
-import akka.pattern.ask
+import akka.actor.{ActorSystem, Props}
 import akka.util.Timeout
+import org.olivergg.messages._
+
+import scala.concurrent.ExecutionContext.Implicits._
+import scala.concurrent.duration._
 object MainClass extends App {
 
   val system = ActorSystem("genetic")

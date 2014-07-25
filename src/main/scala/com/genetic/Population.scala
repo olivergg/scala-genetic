@@ -2,7 +2,7 @@ package com.genetic
 
 import scala.collection.immutable.HashMap
 
-
+@deprecated("do not use")
 class Population(val initialSize: Int, val geneSize: Int, initialize: Boolean = false, private var individuals: Array[Individual])
 {
   var fitnessesMap: Map[Individual, Float] = HashMap.empty
@@ -40,6 +40,7 @@ class Population(val initialSize: Int, val geneSize: Int, initialize: Boolean = 
 /**
 * Companion object
 */
+@deprecated("do not use")
 object Population
 {
   def apply(initialSize: Int, geneSize: Int, initialize: Boolean = false): Population =

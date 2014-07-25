@@ -1,6 +1,6 @@
 package com.genetic
 
-
+@deprecated("do not use")
 sealed class Individual(val genes: Array[Int])
 {
   def apply(idx: Int): Int = genes(idx)
@@ -14,6 +14,7 @@ sealed class Individual(val genes: Array[Int])
 /**
 * Companion object for static methods
 */
+@deprecated("do not use")
 object Individual
 {
   def generateIndividual(size: Int): Individual =
@@ -23,6 +24,6 @@ object Individual
     })
   }
 }
-
+@deprecated("do not use")
 object EmptyIndividual extends Individual(Array(0))
 
