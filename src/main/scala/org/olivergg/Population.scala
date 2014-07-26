@@ -5,6 +5,7 @@ import akka.pattern.ask
 import org.olivergg.messages._
 
 import scala.collection.mutable.ListBuffer
+
 class Population extends MyActor {
 
   val populationSize = 50
@@ -33,12 +34,28 @@ class Population extends MyActor {
     case Evolve => {
       log.info("received evolve message")
       if (!stopCondition()) {
-        for (i <- 1 to populationSize + 1) {
-          val tourn = context.actorOf(Props(new Tournament(10, populationSize)), name = s"gen_${generationNth}_tournament_$i")
-          tourn ! RunTournament(activeGeneration.path)
-        }
+        context.become(tournamentSelectionMode)
+        self ! CreateTournaments
       } else {
         log.info(s"Total duration = ${(System.nanoTime() - startTimeStamp) / 1E6} ms")
+      }
+    }
+
+
+    case GenerationDone(nth) if nth == 0 => {
+      log.info(s"generation 0 is done ")
+      self ! Evolve
+    }
+    case _ => log.info("Unkwown message received")
+  }
+
+
+  def tournamentSelectionMode: Receive = {
+
+    case CreateTournaments => {
+      for (i <- 1 to populationSize + 1) {
+        val tourn = context.actorOf(Props(new Tournament(10, populationSize)), name = s"gen_${generationNth}_tournament_$i")
+        tourn ! RunTournament(activeGeneration.path)
       }
     }
 
@@ -58,12 +75,6 @@ class Population extends MyActor {
         }
       }
     }
-
-    case GenerationDone(nth) if nth == 0 => {
-      log.info(s"generation 0 is done ")
-      self ! Evolve
-    }
-    case _ => log.info("Unkwown message received")
   }
 
   def crossingMode: Receive = {

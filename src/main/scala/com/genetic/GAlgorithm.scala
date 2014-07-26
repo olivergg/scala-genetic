@@ -183,14 +183,14 @@ object GAlgorithm extends App {
     //    c
     //  }
 
-    import KnapsackProblem.Objet
-    def getPrice(objets: Array[Objet], sol: Individual): Float = {
+    import KnapsackProblem.BagObject
+    def getPrice(objets: Array[BagObject], sol: Individual): Float = {
       val zipped = objets zip sol.genes
       val mapped = zipped.map { case (obj, gene) => obj.price * gene }
       mapped.sum
     }
 
-    def getWeight(objets: Array[Objet], sol: Individual): Float = {
+    def getWeight(objets: Array[BagObject], sol: Individual): Float = {
       val zipped = objets zip sol.genes
       val mapped = zipped.map { case (obj, gene) => obj.weight * gene }
       mapped.sum

@@ -9,6 +9,7 @@ package object messages {
   case object Start extends Message
   case object Evolve extends Message
   case class RunTournament(generationPath: ActorPath) extends Message
+  case object CreateTournaments extends Message
   case class TournamentResult(ind: Option[Individual]) extends Message
   case object StartCrossing extends Message
   case class CrossingRequest(parent1genes: Individual, parent2genes: Individual) extends Message

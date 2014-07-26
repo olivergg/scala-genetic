@@ -2,22 +2,23 @@ package com.genetic
 
 object KnapsackProblem {
 
-  case class Objet(weight: Int, price: Int) {
+  case class BagObject(weight: Int, price: Int) {
     override def toString: String = s"[w=$weight,p=$price]"
   }
 
   val objets = Array(
-    Objet(12, 6),
-    Objet(2, 3),
-    Objet(1, 2),
-    Objet(1, 4),
-    Objet(3, 1),
-    Objet(11, 5),
-    Objet(3, 2))
+    BagObject(12, 6),
+    BagObject(2, 3),
+    BagObject(1, 2),
+    BagObject(1, 4),
+    BagObject(3, 1),
+    BagObject(11, 5),
+    BagObject(3, 2),
+    BagObject(3, 2))
 
   val maxPrice = objets.map(obj => obj.price).sum
 
-  val BAG_MAX_WEIGHT = 14
+  val BAG_MAX_WEIGHT = 18
 
   def getFitness(ind: Individual): Float =
     {

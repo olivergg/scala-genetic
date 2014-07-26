@@ -7,7 +7,7 @@ import akka.event.Logging
 import akka.util.Timeout
 
 /**
- * A trait that aims to replace the Actor trait to add some common and implicit value.
+ * A trait that aims to replace the Actor trait to add some common and implicit values.
  */
 trait MyActor extends Actor {
   val log = Logging(context.system, this)
