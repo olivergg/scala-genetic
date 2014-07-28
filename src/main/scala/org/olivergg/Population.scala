@@ -3,6 +3,7 @@ package org.olivergg
 import akka.actor.{ActorRef, Props}
 import akka.pattern.ask
 import org.olivergg.messages._
+import scala.concurrent.ExecutionContext.Implicits.global
 
 import scala.collection.mutable.ListBuffer
 
@@ -101,10 +102,15 @@ class Population extends MyActor {
 
     case GenerationDone(nth) => {
       log.info(s"generation $nth is done")
-      if (!nextGenParents.isEmpty) {
-        val bestInd = nextGenParents.maxBy(i => i.evaluatedFitness)
-        log.info(s"best ind of generation n°$generationNth is = $bestInd")
+      //      if (!nextGenParents.isEmpty) {
+      //        val bestInd = nextGenParents.maxBy(i => i.evaluatedFitness)
+      //        log.info(s"best ind of generation n°$generationNth is = $bestInd")
+      //      }
+      val bestInd = (activeGeneration ? GetBestInd).mapTo[GetBestIndResult] onSuccess {
+        case i => log.info(s"best ind of generation n°${i.nth} is = ${i.best}")
       }
+
+
       nextGenParents.clear
       context.become(receive)
       self ! Evolve

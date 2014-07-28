@@ -17,4 +17,6 @@ package object messages {
   case object SetupRandomGeneration extends Message
   case class GenerationDone(nth: Int) extends Message
   case class AddIndividual(genes: Array[Int]) extends Message
+  case class GetBestInd() extends Message
+  case class GetBestIndResult(nth:Int, best:Individual) extends Message
 }
