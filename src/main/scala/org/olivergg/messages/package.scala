@@ -19,4 +19,5 @@ package object messages {
   case class AddIndividual(genes: Array[Int]) extends Message
   case class GetBestInd() extends Message
   case class GetBestIndResult(nth:Int, best:Individual) extends Message
+  case class MutateInd() extends Message
 }

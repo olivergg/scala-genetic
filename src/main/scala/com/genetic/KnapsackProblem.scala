@@ -18,7 +18,7 @@ object KnapsackProblem {
 
   val maxPrice = objets.map(obj => obj.price).sum
 
-  val BAG_MAX_WEIGHT = 18
+  val BAG_MAX_WEIGHT = 12
 
   def getFitness(ind: Individual): Float =
     {

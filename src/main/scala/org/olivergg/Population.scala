@@ -21,7 +21,7 @@ class Population extends MyActor {
 
   var startTimeStamp: Long = 0
 
-  def stopCondition(): Boolean = generationNth >= 4
+  def stopCondition(): Boolean = generationNth >= 30
 
   def receive = {
     case Start => {

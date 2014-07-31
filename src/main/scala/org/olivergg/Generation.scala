@@ -26,6 +26,7 @@ class Generation(nth: Int, popSize: Int) extends MyActor {
 
     case AddIndividual(somegenes: Array[Int]) => {
       val ind = context.actorOf(Props(new Individual(somegenes, KnapsackProblem.getFitness(_))), s"ind_${generationSize}")
+      ind ! MutateInd
       generationSize += 1
       if (generationSize == popSize) {
         log.info(s"generation $nth is done")
