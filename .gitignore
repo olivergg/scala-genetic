@@ -6,3 +6,4 @@
 /target/
 .cache
 .idea/*
+.idea_modules
